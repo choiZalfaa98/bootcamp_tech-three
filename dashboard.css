@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  background-color: #FFFFFF;
+}
+
+header {
+  background-color: #FF833D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+#logo_link {
+  display: flex;
+  align-items: center;
+  margin: 0 2%;
+  height: 100%;
+}
+
+#logo {
+  height: 70%;
+  width: auto;
+  cursor: pointer;
+}
+
+#nav_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.circle-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f9c899;
+  border-radius: 50%;
+  border: 5px solid #f9c899;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+}

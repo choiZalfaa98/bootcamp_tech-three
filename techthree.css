@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    background-color: #FF833D;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+
+#logo_link {
+    display: flex;
+    align-items: center;
+    margin: 0 2%;
+    height: 100%;
+}
+  
+#logo {
+    height: 70%;
+    width: auto;
+    cursor: pointer;
+}
+
+body .div {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9c899;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-regist{
+    position: relative;
+    margin: 50px;
+    background-color: #f9c899;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px #000000;
+    width: auto;
+    min-height: 150px;
+}
+
+.container-login{
+    position: relative;
+    margin: 50px;
+    background-color: #f9c899;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px #000000;
+    width: auto;
+    min-height: 150px;
+}
+
+.container-profile {
+    position: relative;
+    margin: 5px 50px;
+    background-color: #f9c899;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px #000000;
+    width: auto;
+    min-height: 150px;
+}
+
+#h1-p {
+    margin: 20px 0;
+    padding-left: 35px;
+    padding-bottom: 0px;
+    color: #811700;
+}
+
+#my-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h-p{
+    color: #000000;
+    margin: 0 0 0;
+    font-family: sans-serif;
+}
+
+#edit-profile {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    height: 100%;
+    color: #811700;
+    font-weight: bold;
+    background-color: #FF833D;
+    border-radius: 25px;
+}
+
+#sandi-profile {
+    flex-direction: row;
+    width: auto;
+}
+
+
+#img-regist {
+    border-radius: 25px;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0 0;
+}
+
+.form-registration {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    height: 100%;
+    color: #811700;
+    font-weight: bold;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    height: 100%;
+    color: #811700;
+    font-weight: bold;
+}
+
+.button-regist {
+    width: 75px;    
+    border-radius: 20px;
+    outline: none;
+    align-self: flex-end;
+    background-color:#811700;
+    color: #ffffff;
+}
+
+.button-login {
+    width: 75px;    
+    border-radius: 20px;
+    outline: none;
+    align-self: flex-end;
+    background-color:#811700;
+    color: #ffffff;
+}
+
