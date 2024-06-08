@@ -28,27 +28,54 @@ header {
 
 #nav_header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  height: 100%;
+  padding-right: 6%;
 }
 
 .circle-container {
   background-color: #f9c899;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+  height: 35%;
+  margin-right: 25%;
+  padding: 17%;
+}
+
+.circle-img {
   height: 100%;
+  width: auto;
+  cursor: pointer;
+  display: flex;
+  justify-self: center;
+  align-self: center;
 }
 /*==========================================================================*/
-#sectionDashboard {
-  border-right: 1px solid #FF833D;
+#navDashboard {
+  box-shadow: 3px 0 2px rgba(0, 0, 0, 0.1);
+  max-width: 20%;
+  padding-block: 2%;
+}
+
+.sectionDashboard {
+  display: flex;
+  align-items: center;
+  margin: 3% 20% 3% 10%;
+  text-decoration: none;
 }
 
 .iconAdjust {
-  max-height: 50%;
-  max-width: auto;
+  max-height: 32px;
+  padding: 5%;
 }
 
 .navAdjust {
-  color: #a0a0a0;
-  font-size: 135%;
+  color: #817979;
+  font-size: 146%;
+  margin-left: 5%;
+}
+
+.navAdjust:hover {
+  color: #FF833D;
 }
