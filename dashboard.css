@@ -99,8 +99,16 @@ main {
   color: #FFFFFF;
 }
 
+#haloUser {
+  font-size: 5vh;
+}
+
+#teruskanProgresAnda {
+  font-size: 3vh;
+}
+
 #innerSquare {
-  background-color: #f9c899;
+  background-color: #f6e8e0;
   border-radius: 15px;
   max-width: 100%;
   max-height: 100%;
@@ -109,4 +117,67 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   color: #811700;
+}
+
+.titleSubSquareMotivate {
+  font-size: 155%;
+  display: inline;
+}
+
+.iconAdjustInner {
+  max-height: 3vh;
+  padding: 5%;
+  display: inline;
+}
+
+.jumlahMotivate {
+  font-size: 5vh;
+  color: #A93C00;
+}
+
+hr {
+  margin-left: 0;
+  width: 85%;
+  color: #5C0000;
+}
+
+.jumlahMotivateBold {
+  font-size: 7vh;
+  font-weight: bolder;
+  color: #5C0000;
+}
+
+#materiSquare {
+  border: 1px solid rgba(169, 60, 0, 0.3);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 25px;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  width: 50%; /* Adjust the width to represent progress */
+  height: 30px;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 30px; /* Same as height to center text vertically */
+  color: white;
+  border-radius: 25px;
+}
+
+.imgBoxAdjust {
+  object-fit: contain;
+  max-height: 15vh;
+  padding: 5%; 
+}
+
+.divideTitleBar {
+  display: grid;
+  grid-template-rows: 75% 25%;
 }
