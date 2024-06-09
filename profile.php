@@ -33,9 +33,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <header>
-            <a id="logo_link" href="landingPage.html">
+            <a id="logo_link" href="index.html">
                 <img src="Logo.png" id="logo">
             </a>
+            <!--Navigasi halaman lapor keluh kesah dan profile-->
+            <nav id="nav_header">
+                <!--Navigasi Feedback/Lapor-->
+                <a href="#" class="circle-container">
+                    <img class="circle-img" src="feedback.png">
+                </a>
+                <!--Navigasi Halaman Profile-->
+                <a href="#" class="circle-container">
+                    <img class="circle-img" src="user.png">
+                </a>
+            </nav>
         </header>
         <h1 id="h1-p"><b>Edit Profile</b></h1>
         <div class="container-profile">
