@@ -27,6 +27,34 @@ header {
     cursor: pointer;
 }
 
+#nav_header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding-right: 3%;
+}
+
+.circle-container {
+    background-color: #f9c899;
+    border-radius: 50%;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    height: 50%;
+    margin-right: 15%;
+    padding: 10%;
+}
+  
+.circle-img {
+    height: 100%;
+    width: auto;
+    cursor: pointer;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+/*====================================*/
+
 body .div {
     display: flex;
     flex-direction: column;
