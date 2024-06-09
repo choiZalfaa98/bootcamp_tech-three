@@ -60,8 +60,10 @@ main {
 #navDashboard {
   box-shadow: 3px 0 2px rgba(0, 0, 0, 0.1);
   max-width: 95%;
+  max-height: 100%;
+  background-color: #f9f2f2;
   padding-block: 15%;
-  height: calc(100vh - 27vh);
+  overflow-y: hidden;
 }
 
 .sectionDashboard {
@@ -100,11 +102,11 @@ main {
 }
 
 #haloUser {
-  font-size: 5vh;
+  font-size: 285%;
 }
 
 #teruskanProgresAnda {
-  font-size: 3vh;
+  font-size: 150%;
 }
 
 #innerSquare {
@@ -120,14 +122,14 @@ main {
 }
 
 .titleSubSquareMotivate {
-  font-size: 155%;
+  font-size: 160%;
   display: inline;
 }
 
 .iconAdjustInner {
-  max-height: 3vh;
-  padding: 5%;
+  max-height: 4vh;
   display: inline;
+  padding-right: 1vw;
 }
 
 .jumlahMotivate {
@@ -147,37 +149,61 @@ hr {
   color: #5C0000;
 }
 
+#lanjutkanMateri {
+  margin-top: 4%;
+  color: #ed742e;
+}
+
 #materiSquare {
   border: 1px solid rgba(169, 60, 0, 0.3);
   border-radius: 15px;
   display: grid;
-  grid-template-columns: 20% 50% 30%;
+  grid-template-columns: 15% 55% 30%;
 }
 
 .progress-container {
   width: 100%;
-  background-color: #f3f3f3;
+  height: 3vh;
+  background-color: #e5e1e1;
   border-radius: 25px;
-  margin: 20px 0;
 }
 
 .progress-bar {
-  width: 50%; /* Adjust the width to represent progress */
-  height: 30px;
-  background-color: #4caf50;
-  text-align: center;
-  line-height: 30px; /* Same as height to center text vertically */
-  color: white;
+  width: 20%;
+  height: 100%;
+  background-color: #FF833D;
   border-radius: 25px;
+}
+
+.percentageBar {
+  color: white;
+  font-weight: 1000;
+  letter-spacing: 1px;
+  padding-inline: 3vw;
 }
 
 .imgBoxAdjust {
   object-fit: contain;
-  max-height: 15vh;
-  padding: 5%; 
+  max-height: 17vh; 
+  border: 3px solid rgba(223, 59, 4, 0.2);
+  border-radius: 15px;
+  margin: 1vw;
 }
 
 .divideTitleBar {
   display: grid;
   grid-template-rows: 75% 25%;
+}
+
+.lihatDetailKelas {
+  background-color: #A93C00;
+  border-radius: 10px;
+  margin: 2vh 0 0 8vw;
+  max-height: 27%;
+  max-width: 60%;
+  color: #ffffff;
+  padding-top: 2vh;
+  text-align: center;
+  font-size: 150%;
+  text-decoration: none;
 }
