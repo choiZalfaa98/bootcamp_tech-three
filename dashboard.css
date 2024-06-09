@@ -52,10 +52,16 @@ header {
   align-self: center;
 }
 /*==========================================================================*/
+main {
+  display: grid;
+  grid-template-columns: 21% 79%;
+}
+
 #navDashboard {
   box-shadow: 3px 0 2px rgba(0, 0, 0, 0.1);
-  max-width: 21%;
-  padding-block: 2%;
+  max-width: 95%;
+  padding-block: 15%;
+  height: calc(100vh - 27vh);
 }
 
 .sectionDashboard {
@@ -78,4 +84,29 @@ header {
 
 .navAdjust:hover {
   color: #FF833D;
+}
+/*=========================================*/
+.content {
+  margin: 2%;
+}
+
+#motivationSquare {
+  background-color: #A93C00;
+  border-radius: 25px;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 2% 3%;
+  color: #FFFFFF;
+}
+
+#innerSquare {
+  background-color: #f9c899;
+  border-radius: 15px;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 2% 3%;
+  margin-top: 2%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #811700;
 }
