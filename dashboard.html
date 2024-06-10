@@ -24,14 +24,48 @@
           <img class="circle-img" src="feedback.png">
         </a>
         <!--Navigasi Halaman Profile-->
-        <p class="circle-container">
+        <p onclick="toggleMenu()" class="circle-container">
           <img class="circle-img" src="user.png">
         </p>
         <!--dropdown menu-->
-        <div id="dropdown-menu" class="dropdown-content">
-          <a href="profile.html">Profile</a>
-          <a href="settings.html">Settings</a>
-          <a href="logout.html">Logout</a>
+        <div id="subMenu" class="subMenu-wrap">
+          <div class="subMenu">
+            <div class="user-info">
+              <img src="user.png">
+              <h2>user0767</h2>
+            </div>
+            <hr>
+              <!--link-->
+              <a href="dashboard.html" class="sub-menu-link">
+                <img src="dashboardIcon.png">
+                <p>Dashboard</p>
+              </a>
+              <a href="profile.html" class="sub-menu-link">
+                <img src="profileIcon.png">
+                <p>Profile</p>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="kelasSayaIcon.png">
+                <p>Kelas Bootcamp</p>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="projectIcon.png">
+                <p>Proyek Akhir</p>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="certificateIcon.png">
+                <p>Sertifikat</p>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="feedback.png">
+                <p>Feedback</p>
+              </a>
+              <!--log out-->
+              <a href="#" id="logOut" class="sub-menu-link">
+                <img src="logOut.png">
+                <p>Keluar</p>
+              </a>
+          </div>
         </div>
       </nav>
     </header>
@@ -45,7 +79,7 @@
           <p class="navAdjust">Dashboard</p>
         </a>
 
-        <a href="#" class="sectionDashboard">
+        <a href="profile.html" class="sectionDashboard">
           <img class="iconAdjust" src="profileIcon.png">
           <p class="navAdjust">Profile</p>
         </a>
