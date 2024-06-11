@@ -160,6 +160,11 @@ main {
   align-items: center;
   margin: 0 20% 0 10%;
   text-decoration: none;
+  transition: transform 0.5s;
+}
+
+.sectionDashboard:hover {
+  transform: translateX(5px);
 }
 
 .iconAdjust {
@@ -171,12 +176,10 @@ main {
   color: #817979;
   font-size: 135%;
   margin-left: 5%;
-  transition: transform 0.5s;
 }
 
 .navAdjust:hover {
   color: #FF833D;
-  transform: translateX(5px);
 }
 /*=========================================*/
 .content {
