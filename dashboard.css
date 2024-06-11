@@ -240,12 +240,12 @@ hr {
   color: #5C0000;
 }
 
-#lanjutkanMateri {
+#lanjutkanMateri, .kelasBootcamp {
   margin-top: 4%;
   color: #ed742e;
 }
 
-#materiSquare {
+#materiSquare, .kelasBootcamp {
   border: 1px solid rgba(169, 60, 0, 0.3);
   border-radius: 15px;
   display: grid;
