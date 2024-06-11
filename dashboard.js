@@ -15,3 +15,19 @@ document.addEventListener("DOMContentLoaded", function() {
     window.location.href = "index.html";
   });
 });
+
+//============================================================================
+// Function to handle navigation when clicking on <a> tags with onclick attribute
+function navigateTo(contentId) {
+  // Remove 'active' class from all content sections
+  let allContent = document.querySelectorAll('.content');
+  allContent.forEach(function(content) {
+    content.classList.remove('active');
+  });
+
+  // Add 'active' class to the selected content section
+  let selectedContent = document.getElementById(contentId);
+  if (selectedContent) {
+    selectedContent.classList.add('active');
+  }
+}

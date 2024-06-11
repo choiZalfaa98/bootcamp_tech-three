@@ -36,7 +36,7 @@
             </div>
             <hr>
               <!--link-->
-              <a href="dashboard.html" class="sub-menu-link">
+              <a href="#" class="sub-menu-link" onclick="navigateTo('dashboardContent')">
                 <img src="dashboardIcon.png">
                 <p>Dashboard</p>
               </a>
@@ -44,7 +44,7 @@
                 <img src="profileIcon.png">
                 <p>Profile</p>
               </a>
-              <a href="#" class="sub-menu-link">
+              <a href="#" class="sub-menu-link" onclick="navigateTo('kelasBootcampContent')">
                 <img src="kelasSayaIcon.png">
                 <p>Kelas Bootcamp</p>
               </a>
@@ -72,7 +72,7 @@
 
     <!--Navigasi bagian kiri-->
     <nav id="navDashboard">
-      <a href="dashboard.html" class="sectionDashboard">
+      <a href="#" class="sectionDashboard" onclick="navigateTo('dashboardContent')">
         <img class="iconAdjust" src="dashboardIcon.png">
         <p class="navAdjust">Dashboard</p>
       </a>
@@ -82,7 +82,7 @@
         <p class="navAdjust">Profile</p>
       </a>
 
-      <a href="#" class="sectionDashboard">
+      <a href="#" class="sectionDashboard" onclick="navigateTo('kelasBootcampContent')">
         <img class="iconAdjust" src="kelasSayaIcon.png">
         <p class="navAdjust">Kelas Bootcamp</p>
       </a>
@@ -105,7 +105,7 @@
     <!--Bagian utama halaman-->
     <main>
       <!--halaman konten (center)-->
-      <div class="content" id="dashboard">
+      <div class="content active" id="dashboardContent">
         <div id="motivationSquare">
           <h1 id="haloUser">Halo, user0767!</h1>
           <p id="teruskanProgresAnda">Teruskan progres Anda dan hadapi tantangan baru!</p>
@@ -142,7 +142,9 @@
       </div>
 
       <!--KELAS BOOTCAMP-->
-      <div class="content" id="kelasBootcamp"></div>
+      <div class="content" id="kelasBootcampContent">
+        <h1>Kelas yang Diikuti</h1>
+      </div>
     </main>
   </body>
 </html>
