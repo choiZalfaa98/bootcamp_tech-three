@@ -11,6 +11,8 @@ header {
   align-items: center;
   height: 100px;
   width: 100%;
+  position: sticky;
+  z-index: 2;
 }
 
 #logo_link {
@@ -54,7 +56,8 @@ header {
 }
 
 .subMenu-wrap {
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   top: 10%;
   right: 4%;
   width: 320px;
@@ -69,7 +72,7 @@ header {
 
 .subMenu {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 5px 20px 20px 20px;
   margin: 20px;
 }
 
@@ -83,9 +86,9 @@ header {
 }
 
 .user-info img {
-  width: 60px;
+  width: 35px;
   border-radius: 50%;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .subMenu hr {
@@ -93,7 +96,7 @@ header {
   height: 1px;
   width: 100%;
   background: #ccc;
-  margin: 15px 0 10px;
+  margin: 2px 0 10px;
 }
 
 .sub-menu-link {
@@ -106,12 +109,12 @@ header {
 
 .sub-menu-link p {
   width: 100%;
-  font-size: 135%;
+  font-size: 115%;
 }
 
 .sub-menu-link img {
-  max-width: 15%;
-  margin-right: 10%;
+  max-width: 10%;
+  margin-right: 7%;
 }
 
 .sub-menu-link:hover {
@@ -134,23 +137,28 @@ header {
 }
 /*==========================================================================*/
 main {
-  display: grid;
-  grid-template-columns: 21% 79%;
+  margin-left: 21%;
+  position: relative;
+  z-index: 0;
 }
 
 #navDashboard {
   box-shadow: 3px 0 2px rgba(0, 0, 0, 0.1);
-  max-width: 95%;
+  width: 20%;
   max-height: 100%;
   background-color: #f9f2f2;
-  padding-block: 15%;
+  padding-block: 10%;
   overflow-y: hidden;
+  position: fixed;
+  z-index: 1;
+  top: 0;
 }
 
 .sectionDashboard {
   display: flex;
+  justify-content: baseline;
   align-items: center;
-  margin: 3% 20% 3% 10%;
+  margin: 0 20% 0 10%;
   text-decoration: none;
 }
 
@@ -161,7 +169,7 @@ main {
 
 .navAdjust {
   color: #817979;
-  font-size: 146%;
+  font-size: 135%;
   margin-left: 5%;
   transition: transform 0.5s;
 }
