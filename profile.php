@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!--Navigasi halaman lapor keluh kesah dan profile-->
             <nav id="nav_header">
                 <!--Navigasi Feedback/Lapor-->
-                <a href="#" class="circle-container">
+                <a href="feedback.html" class="circle-container">
                     <img class="circle-img" src="feedback.png">
                 </a>
                 <!--Navigasi Halaman Profile-->
