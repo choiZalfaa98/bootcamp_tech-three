@@ -17,19 +17,48 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //============================================================================
-function navigateTo(contentId) {
-  // Remove 'active' class from all content sections
-  let allContent = document.querySelectorAll('.content');
-  allContent.forEach(function(content) {
-    content.classList.remove('active');
-  });
+function navigateTo(contentId, targetPage) {
+  if (targetPage) {
+      // Navigate to another page with a fragment identifier
+      window.location.href = `${targetPage}#${contentId}`;
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
+  } else {
+      // Internal navigation: Remove 'active' class from all content sections
+      let allContent = document.querySelectorAll('.content');
+      allContent.forEach(function(content) {
+          content.classList.remove('active');
+      });
 
-  // Add 'active' class to the selected content section
-  let selectedContent = document.getElementById(contentId);
-  if (selectedContent) {
-    selectedContent.classList.add('active');
+      // Add 'active' class to the selected content section
+      var selectedContent = document.getElementById(contentId);
+      if (selectedContent) {
+          selectedContent.classList.add('active');
+          // Scroll to the top of the page
+          window.scrollTo(0, 0);
+      }
   }
-
-  // Scroll to the top of the page
-  window.scrollTo(0, 0);
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Check if the URL contains a fragment identifier
+  if (window.location.hash) {
+      // Extract the fragment identifier (without the '#')
+      var contentId = window.location.hash.substring(1);
+
+      // Remove 'active' class from all content sections
+      let allContent = document.querySelectorAll('.content');
+      allContent.forEach(function(content) {
+          content.classList.remove('active');
+      });
+
+      // Add 'active' class to the selected content section
+      var selectedContent = document.getElementById(contentId);
+      if (selectedContent) {
+          // Scroll to the top of the page
+          window.scrollTo(0, 0);
+          selectedContent.classList.add('active');
+      }
+  }
+});
+
