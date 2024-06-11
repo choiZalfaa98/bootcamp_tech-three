@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //============================================================================
-// Function to handle navigation when clicking on <a> tags with onclick attribute
 function navigateTo(contentId) {
   // Remove 'active' class from all content sections
   let allContent = document.querySelectorAll('.content');
@@ -30,4 +29,7 @@ function navigateTo(contentId) {
   if (selectedContent) {
     selectedContent.classList.add('active');
   }
+
+  // Scroll to the top of the page
+  window.scrollTo(0, 0);
 }

@@ -48,7 +48,7 @@
                 <img src="kelasSayaIcon.png">
                 <p>Kelas Bootcamp</p>
               </a>
-              <a href="#" class="sub-menu-link">
+              <a href="#" class="sub-menu-link" onclick="navigateTo('proyekAkhirContent')">
                 <img src="projectIcon.png">
                 <p>Proyek Akhir</p>
               </a>
@@ -87,7 +87,7 @@
         <p class="navAdjust">Kelas Bootcamp</p>
       </a>
 
-      <a href="#" class="sectionDashboard">
+      <a href="#" class="sectionDashboard" onclick="navigateTo('proyekAkhirContent')">
         <img class="iconAdjust" src="projectIcon.png">
         <p class="navAdjust">Proyek Akhir</p>
       </a>
@@ -105,7 +105,7 @@
     <!--Bagian utama halaman-->
     <main>
       <!--halaman konten (center)-->
-      <div class="content active" id="dashboardContent">
+      <div class="content" id="dashboardContent">
         <div id="motivationSquare">
           <h1 id="haloUser">Halo, user0767!</h1>
           <p id="teruskanProgresAnda">Teruskan progres Anda dan hadapi tantangan baru!</p>
@@ -143,7 +143,43 @@
 
       <!--KELAS BOOTCAMP-->
       <div class="content" id="kelasBootcampContent">
-        <h1>Kelas yang Diikuti</h1>
+        <!--kelas yang diikuti-->
+        <h1 class="subTitle-kelas">Kelas yang Diikuti</h1>
+        <div class="classWrap">
+          <img class="imgAdjust2" src="uiux.png">
+          <section class="divideTitleBar2">
+            <h1 class="titleKelas">Desain UI/UX - Pengenalan</h1>
+            <div class="progress-container2">
+              <div class="progress-bar2"><span class="percentageBar2">20%</span></div>
+            </div>
+          </section>
+          <button class="lihatDetailKelas2">Lihat Detail Kelas</button>
+        </div>
+        <!--kelas lainnya-->
+        <h1 id="kelasLainnya" class="subTitle-kelas">Kelas Lainnya</h1>
+        <!--kelas 1-->
+        <div class="classWrap">
+          <img class="imgAdjust2" src="fotografi.png">
+          <h1 class="titleKelas2">Fotografi</h1>
+          <button class="lihatDetailKelas2">Lihat Detail Kelas</button>
+        </div>
+        <!--kelas 2-->
+        <div class="classWrap">
+          <img class="imgAdjust2" src="webdev.png">
+          <h1 class="titleKelas2">Pengembangan Web</h1>
+          <button class="lihatDetailKelas2">Lihat Detail Kelas</button>
+        </div>
+      </div>
+
+      <!--PROYEK AKHIR-->
+      <div class="content active" id="proyekAkhirContent">
+        <!--kelas yang diikuti-->
+        <h1 class="subTitle-kelas">Proyek Akhir</h1>
+        <div class="classWrap">
+          <img class="imgAdjust2" src="uiux.png">
+          <h1 class="titleKelas3">Re-Design Aplikasi E-Commerce Niche untuk Fashion Sustainable: <em>EcoFashion</em></h1>
+          <button class="lihatDetailKelas2">Detail Proyek</button>
+        </div>
       </div>
     </main>
   </body>
