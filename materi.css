@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #FFFFFF;
+  background-color: #dfdfdf;
   font-family: sans-serif;
 }
 
@@ -27,4 +27,79 @@ header {
   width: auto;
   cursor: pointer;
 }
+
+header h3 {
+  background-color: #A93C00;
+  color: #FFFFFF;
+  padding: 1% 2%;
+  font-size: 95%;
+  border-radius: 25px;
+  letter-spacing: 1px;
+  left: 0;
+}
+
+.progresWrap {
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.progress-container {
+  height: 3vh;
+  width: 13vw;
+  border-radius: 25px;
+  background-color: #F3F3F3;
+  margin-right: 2%;
+}
+
+.progress-bar {
+  background-color: #5C0000;
+  width: 20%;
+  height: 100%;
+  border-radius: 25px;
+}
+
+
+.progresWrap {
+  font-weight: 600;
+  color: #811700;
+  padding-right: 3%;
+  margin: 0;
+}
+
+.progress-score {
+  font-size: 115%;
+}
+
+.materiSelesai {
+  margin-left: 2%;
+  font-size: 100%;
+}
+
+.profileAdjust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 7%;
+}
+
+.profileAdjust img {
+  width: 3vw;
+  border-radius: 50%;
+  background-color: #f9c899;
+  padding: 3%;
+  box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.4);
+}
+
+.profileAdjust p {
+  font-weight: 600;
+  margin-left: 7%;
+  font-size: 135%;
+  color: #5C0000;
+}
 /*=======================================*/
+main {
+  background-color: #FFFFFF;
+  margin: 0 1%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+}
