@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  background-color: #FFFFFF;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #FF833D;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  position: sticky;
+  z-index: 2;
+}
+
+#logo_link {
+  display: flex;
+  align-items: center;
+  margin: 0 2%;
+  height: 100%;
+}
+
+#logo {
+  height: 70%;
+  width: auto;
+  cursor: pointer;
+}
+/*=======================================*/
