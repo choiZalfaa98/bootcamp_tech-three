@@ -1,25 +1,67 @@
 <?php
-include 'config.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "techthree";
 
-// Inisialisasi variabel pesan
-$message = "";
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Memeriksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+session_start();
+
+// Memastikan pengguna sudah login dan memiliki sesi aktif
+if (!isset($_SESSION['user_id'])) {
+    die("Anda harus login untuk mengakses halaman ini.");
+}
+
+$user_id = $_SESSION['user_id'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+    $name = $_POST['name'];
+    $pnumber = $_POST['pnumber'];
     $email = $_POST['email'];
+    $pwd = $_POST['pwd'];
+    $cpwd = $_POST['cpwd'];
 
-    // Validasi sederhana
-    if (!empty($username) && !empty($email)) {
-        echo "<h1>Profil Pengguna</h1>";
-        echo "<p>Username: " . htmlspecialchars($username) . "</p>";
-        echo "<p>Email: " . htmlspecialchars($email) . "</p>";
-    } else {
-        echo "Semua kolom harus diisi.";
+    if ($pwd != $cpwd) {
+        die("Kata sandi dan konfirmasi kata sandi tidak cocok.");
     }
-} else {
-    echo "Invalid request method.";
+
+    // Update query untuk memperbarui data profil pengguna
+    $update_query = "UPDATE users SET name = '$name', pnumber = '$pnumber', email = '$email'";
+
+    if (!empty($pwd)) {
+        $hashed_pwd = password_hash($pwd, PASSWORD_DEFAULT);
+        $update_query .= ", password = '$hashed_pwd'";
+    }
+
+    $update_query .= " WHERE id = $user_id";
+
+    if ($conn->query($update_query) === TRUE) {
+        echo "Profil berhasil diperbarui";
+    } else {
+        echo "Terjadi kesalahan: " . $conn->error;
+    }
 }
+
+// Mengambil data pengguna untuk ditampilkan
+$user_query = "SELECT name, email, pnumber FROM users WHERE id = $user_id";
+$user_result = $conn->query($user_query);
+
+if ($user_result->num_rows > 0) {
+    $user_data = $user_result->fetch_assoc();
+} else {
+    die("Pengguna tidak ditemukan.");
+}
+
+$conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -30,64 +72,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <link rel="stylesheet" href="techthree.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="dashboard.js" defer></script>
     </head>
     <body>
         <header>
-            <a id="logo_link" href="dashboard.html">
+            <a id="logo_link" href="landingPage.html">
                 <img src="Logo.png" id="logo">
             </a>
-            <!--Navigasi halaman lapor keluh kesah dan profile-->
-            <nav id="nav_header">
-                <!--Navigasi Feedback/Lapor-->
-                <a href="feedback.html" class="circle-container">
-                    <img class="circle-img" src="feedback.png">
-                </a>
-                <!--Navigasi Halaman Profile-->
-                <p id="userProf" onclick="toggleMenu()" class="circle-container">
-                    <img class="circle-img" src="user.png">
-                </p>
-                <!--dropdown menu-->
-                <div id="subMenu" class="subMenu-wrap">
-                    <div class="subMenu">
-                        <div class="user-info">
-                            <img src="user.png">
-                            <h2>user0767</h2>
-                        </div>
-                        <hr>
-                            <!--link-->
-                            <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('dashboardContent', 'dashboard.html')">
-                                <img src="dashboardIcon.png">
-                                <p>Dashboard</p>
-                            </a>
-                            <a href="profile.html" class="sub-menu-link">
-                                <img src="profileIcon.png">
-                                <p>Profile</p>
-                            </a>
-                            <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('kelasBootcampContent', 'dashboard.html')">
-                              <img src="kelasSayaIcon.png">
-                              <p>Kelas Bootcamp</p>
-                            </a>
-                            <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('proyekAkhirContent', 'dashboard.html')">
-                              <img src="projectIcon.png">
-                              <p>Proyek Akhir</p>
-                            </a>
-                            <a href="#" class="sub-menu-link">
-                              <img src="certificateIcon.png">
-                              <p>Sertifikat</p>
-                            </a>
-                            <a href="feedback.html" class="sub-menu-link">
-                              <img src="feedback.png">
-                              <p>Feedback</p>
-                            </a>
-                            <!--log out-->
-                            <a href="#" id="logOut" class="sub-menu-link">
-                              <img src="logOut.png">
-                              <p>Keluar</p>
-                            </a>
-                    </div>
-                </div>
-            </nav>
         </header>
         <h1 id="h1-p"><b>Edit Profile</b></h1>
         <div class="container-profile">
