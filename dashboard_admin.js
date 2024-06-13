@@ -80,3 +80,9 @@ function activateAndScrollTo(targetDivId) {
     window.scrollTo(0, 0);
   }
 }
+
+// REDIRECTING HALAMAN ADMIN
+function redirectToPage3(targetedPage) {
+  window.location.href = targetedPage;
+  window.scroll(0,0);
+}
