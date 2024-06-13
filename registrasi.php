@@ -1,25 +1,62 @@
 <?php
-include 'config.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "techthree";
 
-// Inisialisasi variabel pesan
-$message = "";
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-//Memasukan Form Ke Database
+// Memeriksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Fungsi untuk memeriksa apakah email sudah terdaftar
+function checkUserExists($email, $conn) {
+    $sql = "SELECT id FROM users WHERE email='$email'";
+    $result = $conn->query($sql);
+    return $result->num_rows > 0;
+}
+
+// Memproses permintaan POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fullName = $_POST['fullName'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $sql = "INSERT INTO users (fullName, email, password) VALUES ('$fullName', '$email', '$password')";
-
-    if ($conn->query($sql) === TRUE) {
-        // Atur pesan berhasil
-        $message = "Registrasi berhasil";
+    if (isset($_POST['check_email'])) {
+        // Cek apakah email sudah terdaftar
+        $email = $_POST['email'];
+        if (checkUserExists($email, $conn)) {
+            echo 'exists';
+        } else {
+            echo 'not exists';
+        }
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        // Proses pendaftaran
+        $name = $_POST['name'];
+        $tanggal = $_POST['tanggal'];
+        $bulan = $_POST['bulan'];
+        $tahun = $_POST['tahun'];
+        $pnumber = $_POST['pnumber'];
+        $email = $_POST['email'];
+        $pwd = password_hash($_POST['pwd'], PASSWORD_DEFAULT); // Menggunakan hash untuk kata sandi
+
+        if (!checkUserExists($email, $conn)) {
+            $sql = "INSERT INTO users (name, tanggal, bulan, tahun, pnumber, email, password)
+                    VALUES ('$name', '$tanggal', '$bulan', '$tahun', '$pnumber', '$email', '$pwd')";
+            if ($conn->query($sql) === TRUE) {
+                echo "Pendaftaran berhasil";
+            } else {
+                echo "Terjadi kesalahan: " . $sql . "<br>" . $conn->error;
+            }
+        } else {
+            echo "Email sudah terdaftar.";
+        }
     }
 }
+
+$conn->close();
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -74,5 +111,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
         </div>
+
+   <script>
+        document.getElementById('registrationForm').onsubmit = function(event) {
+            // Mencegah form dari submit langsung
+            event.preventDefault();
+
+            // Mengambil nilai dari form
+            var email = document.getElementById('email').value;
+
+            // Mengirim data ke server untuk pengecekan
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'check_user.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    if (xhr.responseText == 'exists') {
+                        alert('User sudah terdaftar. Silakan gunakan email yang berbeda.');
+                    } else if (xhr.responseText == 'not exists') {
+                        // Jika user tidak ada, submit form
+                        document.getElementById('registrationForm').submit();
+                    } else {
+                        alert('Terjadi kesalahan pada server. Silakan coba lagi.');
+                    }
+                }
+            };
+            xhr.send('email=' + encodeURIComponent(email));
+        };
+    </script>
     </body>
 </html>

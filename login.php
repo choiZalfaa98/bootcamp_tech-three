@@ -1,27 +1,50 @@
 <?php
-include 'config.php';
+session_start();
 
-// Inisialisasi pesan notifikasi
-$notification = "";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "techthree";
+
+// Membuat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Memeriksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    
-    // Query untuk memeriksa keberadaan email dan password dalam database
-    $sql = "SELECT * FROM users WHERE  email='$email' AND password='$password'";
+    $pwd = $_POST['pwd'];
+
+    // Mencegah SQL Injection
+    $email = $conn->real_escape_string($email);
+    $pwd = $conn->real_escape_string($pwd);
+
+    // Query untuk memeriksa kredensial pengguna
+    $sql = "SELECT id, name, password FROM users WHERE email = '$email'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Jika ditemukan, alihkan ke halaman index.php
-        header("Location: index.php");
-        exit();
+        $user = $result->fetch_assoc();
+        if (password_verify($pwd, $user['password'])) {
+            // Menyimpan data pengguna ke sesi
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['name'];
+            header("Location: profile.php"); // Ganti dengan halaman tujuan setelah login
+            exit();
+        } else {
+            echo "Kata sandi salah.";
+        }
     } else {
-        // Jika tidak ditemukan, atur pesan notifikasi
-        $notification = "Email atau password salah";
+        echo "Email tidak ditemukan.";
     }
 }
+
+$conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html>
