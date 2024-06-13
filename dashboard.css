@@ -189,14 +189,12 @@ main {
   margin: 2%;
   opacity: 0;
   position: absolute;
-  pointer-events: none;
   transition: opacity 0.1s ease;
 }
 
 .active {
   opacity: 1;
   position: relative;
-  pointer-events: none;
 }
 
 /*=====================================================*/
@@ -382,6 +380,7 @@ hr {
   margin: 10% 0 10% 20%;
   font-size: large;
   font-weight: bold;
+  border: none;
 }
 
 .progress-container2 {
@@ -416,6 +415,7 @@ hr {
   margin: 10% 0 10% 20%;
   font-size: large;
   font-weight: bold;
+  border: none;
 }
 
 .locked {

@@ -21,7 +21,6 @@ header {
 }
 
 .halaman_admin:hover {
-  font-weight: 800;
   color: #FFFFFF;
 }
 
@@ -200,14 +199,12 @@ main {
   margin: 2%;
   display: none;
   position: absolute;
-  pointer-events: none;
   transition: opacity 0.1s ease;
 }
 
 .active {
   display: block;
   position: relative;
-  pointer-events: none;
 }
 
 /*=====================================================*/
@@ -267,6 +264,13 @@ main {
   text-align: justify;
 }
 
+#kelasBootcampContent h2 {
+  color: #A93C00;
+  margin-top: 6%;
+  font-size: 4vh;
+  font-style: oblique;
+}
+
 .subTitle-kelas {
   margin-top: 6%;
   font-size: 5vh;
@@ -280,13 +284,19 @@ main {
   align-items: center;
 }
 
-.titleKelas3 {
-  font-size: 100%;
-  color: #811700;
+.titleKelas3a {
+  font-size: 4vh;
+  color: #A93C00;
   display: flex;
-  justify-self: center;
+  justify-self: flex-start;
   align-self: center;
 }
+
+.titleKelas3b {
+  font-size: 3vh;
+  color: #811700;
+}
+
 
 #kelasBootcampContent a {
   text-decoration: none;
@@ -301,9 +311,9 @@ main {
   margin-bottom: 2%;
 }
 
-.divideTitleBar2 {
+.divideTitleBar {
   display: grid;
-  grid-template-rows: 85% 15%;
+  grid-template-rows: 30% 30%;
 }
 
 .imgAdjust2 {
@@ -313,7 +323,7 @@ main {
   border-radius: 15px;
 }
 
-.kelolaKelas {
+.kelolaKelas, .kelolaKelas-main {
   border-radius: 10px;
   background-color: #A93C00;
   color: #FFFFFF;
@@ -322,6 +332,12 @@ main {
   font-size: large;
   font-weight: bold;
   border: none;
+}
+
+
+button:hover {
+  background-color: rgb(228, 101, 27); 
+  cursor: pointer;
 }
 
 .progress-container2 {
@@ -348,14 +364,15 @@ main {
   font-size: small;
 }
 
-.lihatDetailKelas3 {
+.editProyek {
   border-radius: 10px;
-  background-color: #f9c899;
-  color: #811700;
-  padding: 0;
-  margin: 10% 0 10% 20%;
+  background-color: #A93C00;
+  color: #FFFFFF;
+  padding: 1% 2%;
+  margin: 15% 0 15% 20%;
   font-size: large;
   font-weight: bold;
+  border: none;
 }
 
 .locked {

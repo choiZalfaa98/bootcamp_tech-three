@@ -61,3 +61,22 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   }
 });
+
+// =================================================================
+// CLICK BUTTON 'KELOLA KELAS'
+function activateAndScrollTo(targetDivId) {
+  // Remove 'active' class from all content sections
+  let allContent = document.querySelectorAll('.content');
+  allContent.forEach(function(content) {
+    content.classList.remove('active');
+  });
+
+  // Add 'active' class to the selected content section
+  var selectedContent = document.getElementById(targetDivId);
+  if (selectedContent) {
+    selectedContent.classList.add('active');
+    // Scroll to the top of the selected content section
+
+    window.scrollTo(0, 0);
+  }
+}
