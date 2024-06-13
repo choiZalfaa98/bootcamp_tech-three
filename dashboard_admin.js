@@ -81,6 +81,31 @@ function activateAndScrollTo(targetDivId) {
   }
 }
 
+// CLICK BUTTON TO NILAI PROYEK AKHIR
+function activateAndScrollTo2(targetDivId, scrollToId) {
+  // Remove 'active' class from all content sections
+  let allContent = document.querySelectorAll('.content');
+  allContent.forEach(function(content) {
+    content.classList.remove('active');
+  });
+
+  // Add 'active' class to the selected content section
+  var selectedContent = document.getElementById(targetDivId);
+  if (selectedContent) {
+    selectedContent.classList.add('active');
+
+    // Scroll to the top of the selected content section
+    selectedContent.scrollIntoView({ behavior: 'smooth' });
+
+    // Scroll to the specific ID within the selected content section
+    var scrollToElement = selectedContent.querySelector('#' + scrollToId);
+    if (scrollToElement) {
+      scrollToElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+}
+
+
 // REDIRECTING HALAMAN ADMIN
 function redirectToPage3(targetedPage) {
   window.location.href = targetedPage;

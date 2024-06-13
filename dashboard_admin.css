@@ -264,7 +264,7 @@ main {
   text-align: justify;
 }
 
-#kelasBootcampContent h2 {
+#kelasBootcampContent h2, #proyekAkhirContent h2 {
   color: #A93C00;
   margin-top: 6%;
   font-size: 4vh;
@@ -338,6 +338,38 @@ main {
 button:hover {
   background-color: rgb(228, 101, 27); 
   cursor: pointer;
+}
+
+.menujuHalamanMenilai-wrap {
+  margin-top: 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-block: #FF833D 5px solid;
+  padding-block: 2%;
+  margin-bottom: 5%;
+}
+
+.menujuHalamanMenilai-wrap i {
+  font-size: 5vw;
+  color: #FF833D;
+}
+
+.menujuHalamanMenilai {
+  color: #811700;
+  font-size: 4vh;
+}
+
+.menujuHalamanMenilai-button {
+  border-radius: 10px;
+  background-color: #A93C00;
+  color: #FFFFFF;
+  right: 0;
+  padding: 1% 2%;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  margin-right: 2%;
 }
 
 .progress-container2 {
