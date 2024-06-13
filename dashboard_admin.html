@@ -1,0 +1,215 @@
+<!--HALAMAN WEB TECHTREE: DASHBOARD USER (SETELAH LOGIN)-->
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8"> <!--Character encoding-->
+    <!--Responsive design viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kelompok3_B"> <!-- Author of the webpage -->
+    <link rel="stylesheet" href="dashboard_admin.css">
+    <title>Dashboard | Admin</title>
+    <!-- Include FontAwesome from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="dashboard_admin.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <!---->
+      <a id="logo_link" href="dashboard_admin.html">
+          <img src="Logo.png" id="logo">
+      </a>
+      <h3 class="halaman_admin">Halaman Admin</h3>
+      <!--Navigasi halaman lapor keluh kesah dan profile-->
+      <nav id="nav_header">
+        <!--Navigasi Liat Feedback User-->
+        <a href="#" class="circle-container">
+          <img class="circle-img" src="feedback.png">
+        </a>
+        <!--Navigasi Halaman Profile-->
+        <p onclick="toggleMenu()" class="circle-container">
+          <img class="circle-img" src="user.png">
+        </p>
+        <!--dropdown menu-->
+        <div id="subMenu" class="subMenu-wrap">
+          <div class="subMenu">
+            <div class="user-info">
+              <img src="user.png">
+              <h2>Admin123</h2>
+            </div>
+            <hr>
+              <!--link-->
+              <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('dashboardContent')">
+                <img src="dashboardIcon.png">
+                <p>Dashboard</p>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="profileIcon.png">
+                <p>Profile</p>
+              </a>
+              <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('kelasBootcampContent')">
+                <img src="kelasSayaIcon.png">
+                <p>Kelas Bootcamp</p>
+              </a>
+              <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('proyekAkhirContent')">
+                <img src="projectIcon.png">
+                <p>Proyek Akhir</p>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="certificateIcon.png">
+                <p>Sertifikat</p>
+              </a>
+              <a href="#" class="sub-menu-link">
+                <img src="feedback.png">
+                <p>Feedback</p>
+              </a>
+              <!--log out-->
+              <a href="#" id="logOut" class="sub-menu-link">
+                <img src="logOut.png">
+                <p>Keluar</p>
+              </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Navigasi bagian kiri-->
+    <nav id="navDashboard">
+      <a href="javascript:void(0);" class="sectionDashboard" onclick="navigateTo('dashboardContent')">
+        <img class="iconAdjust" src="dashboardIcon.png">
+        <p class="navAdjust">Dashboard</p>
+      </a>
+
+      <a href="#" class="sectionDashboard">
+        <img class="iconAdjust" src="profileIcon.png">
+        <p class="navAdjust">Profile</p>
+      </a>
+
+      <a href="javascript:void(0);" class="sectionDashboard" onclick="navigateTo('kelasBootcampContent')">
+        <img class="iconAdjust" src="kelasSayaIcon.png">
+        <p class="navAdjust">Kelas Bootcamp</p>
+      </a>
+
+      <a href="javascript:void(0);" class="sectionDashboard" onclick="navigateTo('proyekAkhirContent')">
+        <img class="iconAdjust" src="projectIcon.png">
+        <p class="navAdjust">Proyek Akhir</p>
+      </a>
+
+      <a href="#" class="sectionDashboard">
+        <img class="iconAdjust" src="certificateIcon.png">
+        <p class="navAdjust">Sertifikat</p>
+      </a>
+
+      <a href="#" class="sectionDashboard">
+        <img class="iconAdjust" src="feedback.png">
+        <p class="navAdjust">Feedback</p>
+      </a>
+    </nav>
+    <!--Bagian utama halaman-->
+    <main>
+      <!--halaman konten (center)-->
+      <div class="content active" id="dashboardContent">
+        <div id="motivationSquare">
+          <h1 id="haloUser">Halo, Admin123!</h1>
+          <p id="teruskanProgresAnda">Selamat datang kembali di dashboard!</p>
+          <div id="innerSquare">
+            <!--user terdaftar dan user yang telah menyelesaikan kelas-->
+            <section class="innerSquareFlex">
+              <div>
+                <i class="fa-solid fa-user-plus iconAdjustInner"></i>
+                <h1 class="titleSubSquareMotivate">User Terdaftar</h1>
+              </div>
+              <div>
+                <i class="fa-solid fa-user-graduate iconAdjustInner"></i>
+                <h1 class="titleSubSquareMotivate">User yang Telah Menyelesaikan Kelas</h1>
+              </div>
+            </section>
+            <section class="innerSquareFlex">
+              <p class="jumlahMotivateBold">1</p>
+              <p class="jumlahMotivateBold">0</p>
+            </section>
+          </div>
+        </div>
+
+        <!--KELOLA KELAS-->
+        <h1 class="subTitle-kelas">Kelola Kelas</h1>
+         <!--kelas 1-->
+        <div class="classWrap">
+          <img class="imgAdjust2" src="uiux.png">
+          <h1 class="titleKelas2">Desain UI/UX</h1>
+          <button class="kelolaKelas">Kelola Kelas</button>
+        </div>
+         <!--kelas 2-->
+        <div class="classWrap">
+           <img class="imgAdjust2" src="fotografi.png">
+           <h1 class="titleKelas2">Fotografi</h1>
+           <button class="kelolaKelas">Kelola Kelas</button>
+        </div>
+         <!--kelas 3-->
+        <div class="classWrap">
+           <img class="imgAdjust2" src="webdev.png">
+           <h1 class="titleKelas2">Pengembangan Web</h1>
+           <button class="kelolaKelas">Ikuti Kelas</button>
+        </div>
+       </div>
+      </div>
+
+      <!--KELAS BOOTCAMP-->
+      <div class="content" id="kelasBootcampContent">
+        <!--KELOLA KELAS-->
+        <h1 class="subTitle-kelas">Kelas Bootcamp</h1>
+         <!--EDIT MATERI dan SOAL QUIZ-->
+
+         <!--kelas 1-->
+         <h2>Desain UI/UX</h2>
+        <div class="classWrap">
+          <img class="imgAdjust2" src="uiux.png">
+          <h1 class="titleKelas2">Materi - Desain UI/UX</h1>
+          <button class="kelolaKelas">Edit Materi</button>
+        </div>
+        <div class="classWrap">
+          <img class="imgAdjust2" src="uiux.png">
+          <h1 class="titleKelas2">Quiz - Desain UI/UX</h1>
+          <button class="kelolaKelas">Edit Quiz</button>
+        </div>
+         <!--kelas 2-->
+         <h2>Fotografi</h2>
+        <div class="classWrap">
+           <img class="imgAdjust2" src="fotografi.png">
+           <h1 class="titleKelas2">Materi - Fotografi</h1>
+           <button class="kelolaKelas">Edit Materi</button>
+        </div>
+         <!--kelas 2-->
+       <div class="classWrap">
+        <img class="imgAdjust2" src="fotografi.png">
+        <h1 class="titleKelas2">Quiz - Fotografi</h1>
+        <button class="kelolaKelas">Edit Quiz</button>
+     </div>
+         <!--kelas 3-->
+         <h2>Pengembangan Web</h2>
+        <div class="classWrap">
+           <img class="imgAdjust2" src="webdev.png">
+           <h1 class="titleKelas2">Materi - Pengembangan Web</h1>
+           <button class="kelolaKelas">Edit Materi</button>
+        </div>
+       <div class="classWrap">
+          <img class="imgAdjust2" src="webdev.png">
+          <h1 class="titleKelas2">Quiz - Pengembangan Web</h1>
+          <button class="kelolaKelas">Edit Quiz</button>
+       </div>
+      </div>
+
+      <!--PROYEK AKHIR-->
+      <div class="content" id="proyekAkhirContent">
+        <!--kelas yang diikuti-->
+        <h1 class="subTitle-kelas">Proyek Akhir</h1>
+        <div class="classWrap">
+          <img class="imgAdjust2" src="uiux.png">
+          <h1 class="titleKelas3">Re-Design Aplikasi E-Commerce Niche untuk Fashion Sustainable: <em>EcoFashion</em></h1>
+          <button class="lihatDetailKelas3">Terkunci</button>
+          <img class="locked" src="locked.png">
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
