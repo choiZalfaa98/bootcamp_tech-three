@@ -218,7 +218,6 @@ button:hover {
 }
 
 .quizAnswers label {
-  cursor: pointer;
   color: #5C0000;
   font-size: 3vh;
   margin-bottom: 2%;
@@ -239,12 +238,6 @@ button:hover {
   width: 0;
   height: 0;
   overflow: hidden;
-}
-
-.quizAnswers input[type="radio"]:checked + span {
-  background-color: #A93C00;
-  color: #ffffff;
-  font-weight: 600;
 }
 
 .tambah_soal {
