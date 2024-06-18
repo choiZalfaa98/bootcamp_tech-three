@@ -173,7 +173,7 @@ body .div {
 
 .container-profile {
     position: relative;
-    margin: 5px 50px;
+    margin: 50px;
     background-color: #f9c899;
     border-radius: 25px;
     box-shadow: 0 5px 15px #000000;
@@ -262,3 +262,10 @@ body .div {
     color: #ffffff;
 }
 
+.default-avatar {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 50%;
+}
