@@ -119,11 +119,11 @@ header {
 
 .sub-menu-link p {
   width: 100%;
-  font-size: 115%;
+  font-size: 100%;
 }
 
 .sub-menu-link img {
-  max-width: 10%;
+  max-width: 8%;
   margin-right: 7%;
 }
 
@@ -187,7 +187,7 @@ main {
 
 .navAdjust {
   color: #817979;
-  font-size: 135%;
+  font-size: 120%;
   margin-left: 5%;
 }
 
