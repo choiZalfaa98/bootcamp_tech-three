@@ -272,3 +272,52 @@ button:hover {
   padding-block: 3px;
   font-weight: bold;
 }
+
+/*------------------------------------------------*/
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+.container input:checked ~ .kalimatJawaban {
+  background-color: #ffffff;
+}
+
+.kalimatJawaban:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .kalimatJawaban:after {
+  display: block;
+}
+
+.container .kalimatJawaban:after {
+ 	top: 0;
+  margin:0 0.4% 2%;
+  width: 8px;
+	height: 8px;
+	border-radius: 50%;
+  background: #811700;
+  padding: 1% 1%;
+}
