@@ -513,3 +513,15 @@ hr {
 .overlay-button:hover {
   transform: scale(1.2); /* Efek scaling saat hover */
 }
+
+/*====================================================*/
+#colorBG {
+  margin-top: 35px;
+  background-color: #FF833D;
+  color: #811700;
+  font-size: 110%;
+  padding-block: 3px;
+  font-weight: bold;
+  text-align: center;
+  font-family: sans-serif;
+}
