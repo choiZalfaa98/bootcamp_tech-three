@@ -251,8 +251,24 @@ button:hover {
   margin: 3% 0 3% 60.5%;
 }
 
-
 .tambah_soal:hover {
   background-color: #e4661d;
 }
 /*=======================================*/
+
+.kirim {
+  display: flex;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  margin-inline-start: 80%;
+}
+
+#colorBG {
+  margin-top: 35px;
+  background-color: #FF833D;
+  color: #811700;
+  font-size: 110%;
+  padding-block: 3px;
+  font-weight: bold;
+}
