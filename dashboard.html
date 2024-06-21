@@ -79,7 +79,7 @@
 
       <a href="profile.html" class="sectionDashboard">
         <img class="iconAdjust" src="profileIcon.png">
-        <p class="navAdjust">Profile</p>
+        <p class="navAdjust">Profile </p>
       </a>
 
       <a href="javascript:void(0);" class="sectionDashboard" onclick="navigateTo('kelasBootcampContent')">
@@ -102,6 +102,7 @@
         <p class="navAdjust">Feedback</p>
       </a>
     </nav>
+    
     <!--Bagian utama halaman-->
     <main>
       <!--halaman konten (center)-->
@@ -153,7 +154,7 @@
               <div class="progress-bar2"><span class="percentageBar2">20%</span></div>
             </div>
           </section>
-          <button class="lihatDetailKelas2">Lihat Detail Kelas</button>
+          <button class="lihatDetailKelas2" onclick="redirectToPage3('detailKelas.html')">Lihat Detail Kelas</button>
         </div>
         <!--kelas lainnya-->
         <h1 id="kelasLainnya" class="subTitle-kelas">Kelas Lainnya</h1>
@@ -161,13 +162,13 @@
         <div class="classWrap">
           <img class="imgAdjust2" src="fotografi.png">
           <h1 class="titleKelas2">Fotografi</h1>
-          <button class="lihatDetailKelas2">Ikuti Kelas</button>
+          <button class="lihatDetailKelas2" onclick="redirectToPage3('detailKelasFotografi.html')">Ikuti Kelas</button>
         </div>
         <!--kelas 2-->
         <div class="classWrap">
           <img class="imgAdjust2" src="webdev.png">
           <h1 class="titleKelas2">Pengembangan Web</h1>
-          <button class="lihatDetailKelas2">Ikuti Kelas</button>
+          <button class="lihatDetailKelas2" onclick="redirectToPage3('detailKelasWeb.html')">Ikuti Kelas</button>
         </div>
       </div>
 

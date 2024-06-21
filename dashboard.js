@@ -14,6 +14,20 @@ document.addEventListener("DOMContentLoaded", function() {
     // Redirect to landing page
     window.location.href = "index.html";
   });
+
+  const overlayButton = document.querySelector(".overlay-button");
+
+  overlayButton.addEventListener("mousedown", function() {
+    overlayButton.style.transform = "scale(0.95)"; /* Efek scaling saat ditekan */
+  });
+
+  overlayButton.addEventListener("mouseup", function() {
+    overlayButton.style.transform = "scale(1)"; /* Kembalikan ke ukuran normal */
+  });
+
+  overlayButton.addEventListener("mouseleave", function() {
+    overlayButton.style.transform = "scale(1)"; /* Kembalikan ke ukuran normal jika mouse meninggalkan area tombol */
+  });
 });
 
 //============================================================================
@@ -62,3 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+function redirectToPage3(targetedPage) {
+  window.location.href = targetedPage;
+  window.scroll(0,0);
+}
