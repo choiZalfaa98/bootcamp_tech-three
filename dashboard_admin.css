@@ -260,11 +260,11 @@ main {
   color: #5C0000;
 }
 /*====================================================*/
-#kelasBootcampContent h1, #proyekAkhirContent h1 {
+#kelasBootcampContent h1, #proyekAkhirContent h1, #feedbackContent h1 {
   text-align: justify;
 }
 
-#kelasBootcampContent h2, #proyekAkhirContent h2 {
+#kelasBootcampContent h2, #proyekAkhirContent h2, #feedbackContent h2 {
   color: #A93C00;
   margin-top: 6%;
   font-size: 4vh;
@@ -413,4 +413,47 @@ button:hover {
   padding: 0;
   transform: translate(67vw, 6vh);
   position: absolute;
+}
+
+/*---------------------------------*/
+
+.feedbackTable {
+  align-items: center;
+  width: 90%;
+  background-color: #ffffff;
+  overflow-y: auto;
+  border-radius: 20px;
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  margin: 0 40px;
+}
+
+.feedbackTable th {
+  width: auto;
+  text-align: center;
+  background-color: #811700;
+  color: #ffffff;
+  padding: 10px;
+  flex: 1;
+}
+
+.feedbackTable th:first-child {
+  border-top-left-radius: 20px; /* Radius sudut kiri atas */
+  border-bottom-left-radius: 20px; /* Radius sudut kiri atas */
+}
+
+.feedbackTable td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.feedbackTable th:last-child {
+  border-top-right-radius: 20px; /* Radius sudut kanan atas */
+  border-bottom-right-radius: 20px; /* Radius sudut kanan atas */
+}
+
+.feedback {
+  background-color: #ece0d1;
 }

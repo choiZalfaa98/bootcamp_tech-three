@@ -23,7 +23,7 @@
       <!--Navigasi halaman lapor keluh kesah dan profile-->
       <nav id="nav_header">
         <!--Navigasi Liat Feedback User-->
-        <a href="#" class="circle-container">
+        <a href="javascript:void(0);" class="circle-container" onclick="navigateTo('feedbackContent')">
           <img class="circle-img" src="feedback.png">
         </a>
         <!--Navigasi Halaman Profile-->
@@ -43,7 +43,7 @@
                 <img src="dashboardIcon.png">
                 <p>Dashboard</p>
               </a>
-              <a href="profile.html" class="sub-menu-link">
+              <a href="profile_admin.html" class="sub-menu-link">
                 <img src="profileIcon.png">
                 <p>Profile</p>
               </a>
@@ -63,7 +63,7 @@
                 <img src="Company.png">
                 <p>Tech Three</p>
               </a>
-              <a href="#" class="sub-menu-link">
+              <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('feedbackContent')">
                 <img src="feedback.png">
                 <p>Feedback</p>
               </a>
@@ -84,7 +84,7 @@
         <p class="navAdjust">Dashboard</p>
       </a>
 
-      <a href="profile.html" class="sectionDashboard" >
+      <a href="profile_admin.html" class="sectionDashboard" >
         <img class="iconAdjust" src="profileIcon.png">
         <p class="navAdjust">Profile</p>
       </a>
@@ -109,7 +109,7 @@
         <p class="navAdjust">Tech Three</p>
       </a>
 
-      <a href="#" class="sectionDashboard">
+      <a href="javascript:void(0);" class="sectionDashboard" onclick="navigateTo('feedbackContent')">
         <img class="iconAdjust" src="feedback.png">
         <p class="navAdjust">Feedback</p>
       </a>
@@ -272,6 +272,77 @@
             <h1 class="titleKelas3b">Sistem Manajemen Toko Online</h1>
           </section>
           <button class="editProyek" onclick="redirectToPage3('menilaiProyekWeb_admin.html')">Nilai Proyek Akhir</button>
+        </div>
+      </div>
+
+      <!-------------------------------------------SABAR--------------------------------------------------->
+      <!--Feedback-->
+      <div class="content" id="feedbackContent">
+        <h1 class="subTitle-kelas">Feedback</h1>
+        <br>
+        <div class="feedback">
+          <br>
+          <table class="feedbackTable">
+            <thead>
+              <tr>
+                <th>ID User</th>
+                <th>Nilai</th>
+                <th>Kategori</th>
+                <th>Komentar</th>
+              </tr>        
+            </thead>
+            <tbody>
+              <tr>
+                <td class="idUser">User0767</td>
+                <td><span class="nilai">Baik</span></td>
+                <td><span class="kategori">Masukan Umum</span></td>
+                <td><span class="komentar">Love this web!!!</span></td>
+              </tr>
+              <tr>
+                <td class="idUser">User_01870</td>
+                <td><span class="nilai">Netral</span></td>
+                <td><span class="kategori">Masalah/Bug</span></td>
+                <td><span class="komentar">Salah satu tombol tidak berfungsi</span></td>
+              </tr>
+              <tr>
+                <td class="idUser">uiux-lover76</td>
+                <td><span class="nilai">Baik</span></td>
+                <td><span class="kategori">Saran Website/Request Fitur</span></td>
+                <td><span class="komentar">Adain bootcamp offline minnn jebal!!!</span></td>
+              </tr>
+              <tr>
+                <td class="idUser">User1040</td>
+                <td><span class="nilai">Netral</span></td>
+                <td><span class="kategori">Masalah/Bug</span></td>
+                <td><span class="komentar">Tombol terlalu kecil</span></td>
+              </tr>
+              <tr>
+                <td class="idUser">User1051</td>
+                <td><span class="nilai">Sangat Baik</span></td>
+                <td><span class="kategori">Saran Website/Request Fitur</span></td>
+                <td><span class="komentar">Mauuu kelas yang lain min</span></td>
+              </tr>
+              <tr>
+                <td class="idUser">User1058</td>
+                <td><span class="nilai">Sangat Baik</span></td>
+                <td><span class="kategori">Masukan umum</span></td>
+                <td><span class="komentar">Menyala website TechThree &#x1F525;&#x1F525;</span></td>
+              </tr>
+              <tr>
+                <td class="idUser">User1067</td>
+                <td><span class="nilai">Netral</span></td>
+                <td><span class="kategori">Masukan Umum</span></td>
+                <td><span class="komentar">Gwenchana gwenchana</span></td>
+              </tr>
+              <tr>
+                <td class="idUser">User1070</td>
+                <td><span class="nilai">Sangat Baik</span></td>
+                <td><span class="kategori">Masukan Umum</span></td>
+                <td><span class="komentar">Daebakkk Neomu chuaaa &#x2764; &#x2764; &#x2764;</span></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
         </div>
       </div>
     </main>

@@ -45,3 +45,7 @@ $(document).ready(function() {
         $('.edit-btn').attr('disabled', false);
     });
 });
+
+function toggleMenu() {
+    subMenu.classList.toggle('open-menu');
+}

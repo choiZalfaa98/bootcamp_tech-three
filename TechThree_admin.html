@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="TechThree_admin.js"></script>
+        <script src="dashboard_admin.js"></script>
     </head>
     <body>
         <header>
@@ -19,11 +20,10 @@
             <a id="logo_link" href="dashboard_admin.html">
                 <img src="Logo.png" id="logo">
             </a>
-            <h3 class="halaman_admin">Halaman Admin</h3>
             <!--Navigasi halaman lapor keluh kesah dan profile-->
             <nav id="nav_header">
                 <!--Navigasi Liat Feedback User-->
-                <a href="#" class="circle-container">
+                <a href="javascript:void(0);" class="circle-container" onclick="navigateTo('feedbackContent', 'dashboard_admin.html')">
                     <img class="circle-img" src="feedback.png">
                 </a>
                 <!--Navigasi Halaman Profile-->
@@ -37,46 +37,46 @@
                             <img src="user.png">
                             <h2>Admin123</h2>
                         </div>
-                            <hr>
+                        <hr>
                         <!--link-->
-                        <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('dashboardContent')">
-                            <img src="dashboardIcon.png">
-                            <p>Dashboard</p>
+                        <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('dashboardContent', 'dashboard_admin.html')">
+                        <img src="dashboardIcon.png">
+                        <p>Dashboard</p>
                         </a>
-                        <a href="profile.html" class="sub-menu-link">
-                            <img src="profileIcon.png">
-                            <p>Profile</p>
+                        <a href="profile_admin.html" class="sub-menu-link">
+                        <img src="profileIcon.png">
+                        <p>Profile</p>
                         </a>
-                        <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('kelasBootcampContent')">
-                            <img src="kelasSayaIcon.png">
-                            <p>Kelas Bootcamp</p>
+                        <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('kelasBootcampContent', 'dashboard_admin.html')">
+                        <img src="kelasSayaIcon.png">
+                        <p>Kelas Bootcamp</p>
                         </a>
-                        <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('proyekAkhirContent')">
-                            <img src="projectIcon.png">
-                            <p>Proyek Akhir</p>
-                        </a>
-                        <a href="#" class="sub-menu-link">
-                            <img src="certificateIcon.png">
-                            <p>Sertifikat</p>
+                        <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('proyekAkhirContent', 'dashboard_admin.html')">
+                        <img src="projectIcon.png">
+                        <p>Proyek Akhir</p>
                         </a>
                         <a href="#" class="sub-menu-link">
-                            <img src="Company.png">
-                            <p>Tech Three</p>
+                        <img src="certificateIcon.png">
+                        <p>Sertifikat</p>
                         </a>
-                        <a href="#" class="sub-menu-link">
-                            <img src="feedback.png">
-                            <p>Feedback</p>
+                        <a href="TechThree_admin.html" class="sub-menu-link">
+                        <img src="Company.png">
+                        <p>Tech Three</p>
+                        </a>
+                        <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('feedbackContent', 'dashboard_admin.html')">
+                        <img src="feedback.png">
+                        <p>Feedback</p>
                         </a>
                         <!--log out-->
                         <a href="#" id="logOut" class="sub-menu-link">
-                            <img src="logOut.png">
-                            <p>Keluar</p>
+                        <img src="logOut.png">
+                        <p>Keluar</p>
                         </a>
                     </div>
                 </div>
             </nav>
         </header>
-
+        
         <div class="container1">
             <div>
                 <h1>Tabel User dan Kelas</h1>
