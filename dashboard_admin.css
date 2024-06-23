@@ -439,8 +439,8 @@ button:hover {
 }
 
 .feedbackTable th:first-child {
-  border-top-left-radius: 20px; /* Radius sudut kiri atas */
-  border-bottom-left-radius: 20px; /* Radius sudut kiri atas */
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .feedbackTable td {
@@ -450,8 +450,8 @@ button:hover {
 }
 
 .feedbackTable th:last-child {
-  border-top-right-radius: 20px; /* Radius sudut kanan atas */
-  border-bottom-right-radius: 20px; /* Radius sudut kanan atas */
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .feedback {
