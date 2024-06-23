@@ -32,3 +32,8 @@ function saveNilai(button) {
   nilaiInput.style.display = "none";
   button.style.display = "none";
 }
+
+function showSuccessMessage() {
+  alert("Selamat, sertifikat berhasil dibuat!");
+}
+
