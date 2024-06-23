@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     event.preventDefault();
     alert("Logging out...");
     // Redirect to landing page
-    window.location.href = "index.html";
+    window.location.href = "index.php";
   });
 
   const overlayButton = document.querySelector(".overlay-button");
