@@ -60,7 +60,7 @@ $conn->close();
         <!-- LOGIN -->
         <header>
             <header>
-                <a id="logo_link" href="landingPage.html">
+                <a id="logo_link" href="index.php">
                     <img src="Logo.png" id="logo">
                 </a>
             </header>
