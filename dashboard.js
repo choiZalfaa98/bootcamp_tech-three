@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Handle logout
   logoutLink.addEventListener("click", function(event) {
-    event.preventDefault();
-    alert("Logging out...");
-    // Redirect to landing page
-    window.location.href = "index.php";
+      event.preventDefault();
+      alert("Logging out...");
+      // Redirect to landing page (index.php)
+      window.location.href = "index.php";
   });
 
   const overlayButton = document.querySelector(".overlay-button");
@@ -78,5 +78,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function redirectToPage3(targetedPage) {
   window.location.href = targetedPage;
-  window.scroll(0,0);
+  window.scroll(0,0); // Opsional: untuk scroll ke bagian atas halaman
 }

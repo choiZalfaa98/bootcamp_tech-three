@@ -17,10 +17,14 @@ $rowUserTerdaftar = $resultUserTerdaftar->fetch_assoc();
 $totalUserTerdaftar = $rowUserTerdaftar['total_user'];
 
 // Query untuk menghitung jumlah user yang telah menyelesaikan kelas
-$sqlUserSelesaiKelas = "SELECT COUNT(Id_User) AS total_user_selesai FROM user WHERE Nama_Kelas IS NOT NULL";
+$sqlUserSelesaiKelas = "SELECT COUNT(Id_User) AS total_user_selesai FROM user_kelas WHERE Tanggal_Selesai IS NOT NULL";
 $resultUserSelesaiKelas = $conn->query($sqlUserSelesaiKelas);
 $rowUserSelesaiKelas = $resultUserSelesaiKelas->fetch_assoc();
 $totalUserSelesaiKelas = $rowUserSelesaiKelas['total_user_selesai'];
+
+// Query untuk mengambil feedback
+$sqlFeedback = "SELECT Id_User, nilai, kategori, komentar FROM feedback";
+$resultFeedback = $conn->query($sqlFeedback);
 
 // Ambil informasi admin berdasarkan admin_id dari sesi
 $admin_id = $_SESSION['admin_id'];
@@ -66,7 +70,7 @@ if ($admin) {
       <!--Navigasi halaman lapor keluh kesah dan profile-->
       <nav id="nav_header">
         <!--Navigasi Liat Feedback User-->
-        <a href="#" class="circle-container">
+        <a href="javascript:void(0);" class="circle-container" onclick="navigateTo('feedbackContent')">
           <img class="circle-img" src="feedback.png">
         </a>
         <!--Navigasi Halaman Profile-->
@@ -78,7 +82,7 @@ if ($admin) {
           <div class="subMenu">
             <div class="user-info">
               <img src="user.png">
-              <h2><?php echo $admin_name; ?></h2>
+              <h2><?php echo htmlspecialchars($admin_name); ?></h2>
             </div>
             <hr>
               <!--link-->
@@ -86,7 +90,7 @@ if ($admin) {
                 <img src="dashboardIcon.png">
                 <p>Dashboard</p>
               </a>
-              <a href="#" class="sub-menu-link">
+              <a href="profile_admin.php" class="sub-menu-link">
                 <img src="profileIcon.png">
                 <p>Profile</p>
               </a>
@@ -98,15 +102,15 @@ if ($admin) {
                 <img src="projectIcon.png">
                 <p>Proyek Akhir</p>
               </a>
-              <a href="#" class="sub-menu-link">
+              <!--a href="#" class="sub-menu-link">
                 <img src="certificateIcon.png">
                 <p>Sertifikat</p>
-              </a>
-              <a href="#" class="sub-menu-link">
+              </a-->
+              <a href="TechThree_admin.php" class="sub-menu-link">
                 <img src="Company.png">
                 <p>Tech Three</p>
               </a>
-              <a href="#" class="sub-menu-link">
+              <a href="javascript:void(0);" class="sub-menu-link" onclick="navigateTo('feedbackContent')">
                 <img src="feedback.png">
                 <p>Feedback</p>
               </a>
@@ -127,7 +131,7 @@ if ($admin) {
         <p class="navAdjust">Dashboard</p>
       </a>
 
-      <a href="#" class="sectionDashboard">
+      <a href="profile_admin.php" class="sectionDashboard" >
         <img class="iconAdjust" src="profileIcon.png">
         <p class="navAdjust">Profile</p>
       </a>
@@ -142,17 +146,17 @@ if ($admin) {
         <p class="navAdjust">Proyek Akhir</p>
       </a>
 
-      <a href="#" class="sectionDashboard">
+      <!--a href="#" class="sectionDashboard" >
         <img class="iconAdjust" src="certificateIcon.png">
         <p class="navAdjust">Sertifikat</p>
-      </a>
+      </a-->
 
-      <a href="#" class="sectionDashboard" >
+      <a href="TechThree_admin.php" class="sectionDashboard">
         <img class="iconAdjust" src="Company.png">
         <p class="navAdjust">Tech Three</p>
       </a>
 
-      <a href="#" class="sectionDashboard">
+      <a href="javascript:void(0);" class="sectionDashboard" onclick="navigateTo('feedbackContent')">
         <img class="iconAdjust" src="feedback.png">
         <p class="navAdjust">Feedback</p>
       </a>
@@ -162,25 +166,25 @@ if ($admin) {
       <!--halaman konten (center)-->
       <div class="content active" id="dashboardContent">
         <div id="motivationSquare">
-          <h1 id="haloUser">Halo, Admin123!</h1>
+        <h1 id="haloUser">Halo, <?php echo $admin_name; ?>!</h1>
           <p id="teruskanProgresAnda">Selamat datang kembali di dashboard!</p>
           <div id="innerSquare">
-      <!-- user terdaftar dan user yang telah menyelesaikan kelas -->
-      <section class="innerSquareFlex">
-        <div>
-          <i class="fa-solid fa-user-plus iconAdjustInner"></i>
-          <h1 class="titleSubSquareMotivate">User Terdaftar</h1>
-        </div>
-        <div>
-          <i class="fa-solid fa-user-graduate iconAdjustInner"></i>
-          <h1 class="titleSubSquareMotivate">User yang Telah Menyelesaikan Kelas</h>
-        </div>
-        </section>
-          <section class="innerSquareFlex">
+            <!--user terdaftar dan user yang telah menyelesaikan kelas-->
+            <section class="innerSquareFlex">
+              <div>
+                <i class="fa-solid fa-user-plus iconAdjustInner"></i>
+                <h1 class="titleSubSquareMotivate">User Terdaftar</h1>
+              </div>
+              <div>
+                <i class="fa-solid fa-user-graduate iconAdjustInner"></i>
+                <h1 class="titleSubSquareMotivate">User yang Telah Menyelesaikan Kelas</h1>
+              </div>
+            </section>
+            <section class="innerSquareFlex">
             <p class="jumlahMotivateBold"><?php echo $totalUserTerdaftar; ?></p>
             <p class="jumlahMotivateBold"><?php echo $totalUserSelesaiKelas; ?></p>
-          </section>
-        </div>
+            </section>
+          </div>
         </div>
 
         <!--KELOLA KELAS-->
@@ -305,7 +309,7 @@ if ($admin) {
             <h1 class="titleKelas3a">Fotografi</h1>
             <h1 class="titleKelas3b">Fotografi: Potret melalui Lensa Budaya</h1>
           </section>
-          <button class="editProyek" onclick="redirectToPage3('menilaiProyek_admin.php')">Nilai Proyek Akhir</button>
+          <button class="editProyek" onclick="redirectToPage3('menilaiProyekFotografi_admin.php')">Nilai Proyek Akhir</button>
         </div>
         <!--kelas 3-->
         <div class="classWrap">
@@ -314,9 +318,44 @@ if ($admin) {
             <h1 class="titleKelas3a">Pengembangan Web</h1>
             <h1 class="titleKelas3b">Sistem Manajemen Toko Online</h1>
           </section>
-          <button class="editProyek" onclick="redirectToPage3('menilaiProyek_admin.php')">Nilai Proyek Akhir</button>
+          <button class="editProyek" onclick="redirectToPage3('menilaiProyekWeb_admin.php')">Nilai Proyek Akhir</button>
         </div>
       </div>
-    </main>
-  </body>
+
+      <title>Feedback</title>
+
+<!-------------------------------------------SABAR--------------------------------------------------->
+    <!--Feedback-->
+    <div class="content" id="feedbackContent">
+    <h1 class="subTitle-kelas">Feedback</h1>
+    <br>
+    <div class="feedback">
+      <br>
+      <table class="feedbackTable">
+        <thead>
+          <tr>
+            <th>ID User</th>
+            <th>Nilai</th>
+            <th>Kategori</th>
+            <th>Komentar</th>
+          </tr>        
+        </thead>
+        <tbody>
+        <?php
+        while ($row = $resultFeedback->fetch_assoc()) {
+          echo "<tr>";
+          echo "<td class='idUser'>" . htmlspecialchars($row['Id_User']) . "</td>";
+          echo "<td><span class='nilai'>" . htmlspecialchars($row['nilai']) . "</span></td>";
+          echo "<td><span class='kategori'>" . htmlspecialchars($row['kategori']) . "</span></td>";
+          echo "<td><span class='komentar'>" . htmlspecialchars($row['komentar']) . "</span></td>";
+          echo "</tr>";
+        }
+        ?>
+        </tbody>
+
+      </table>
+      <br>
+    </div>
+  </d>
+</body>
 </html>

@@ -134,9 +134,9 @@
         <!-- Navigasi halaman -->
         <section class="navigation">
             <?php if ($page < $total_pages) { ?>
-                <a href="materi_admin.php?page=<?php echo $page + 1; ?>"></a>
+                <a href="materi_admin_web.php?page=<?php echo $page + 1; ?>"></a>
             <?php } else { ?>
-                <a href="quiz_admin.php"></a>
+                <a href="quiz_web_admin.php"></a>
             <?php } ?>
         </section>
 
@@ -145,10 +145,10 @@
             <button onclick="redirectToPage('dashboard_admin.php')">
                 <i class="fa-solid fa-chevron-left"></i>Kembali ke Dashboard</button>
             <?php if ($page < $total_pages) { ?>
-                <button onclick="window.location.href='materi_admin.php?page=<?php echo $page + 1; ?>'">Next Materi
+                <button onclick="window.location.href='materi_admin_web.php?page=<?php echo $page + 1; ?>'">Next Materi
                     <i class="fa-solid fa-chevron-right"></i></button>
             <?php } else { ?>
-                <button onclick="redirectToPage('quiz_admin.php')">Edit Quiz
+                <button onclick="redirectToPage('quiz_web_admin.php')">Edit Quiz
                     <i class="fa-solid fa-chevron-right"></i></button>
             <?php } ?>
         </section>

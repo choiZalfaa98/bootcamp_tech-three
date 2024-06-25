@@ -1,14 +1,36 @@
 <?php
 session_start();
 
-// Variabel untuk menampung pesan sukses atau error
-$message = '';
+// Mengambil ID User dari session atau dari parameter yang dikirim
+if (isset($_SESSION['user_id'])) {
+    $userId = $_SESSION['user_id'];
+} else {
+    // Handle case when user is not logged in, redirect to login page or handle appropriately
+    header("Location: login.php");
+    exit;
+}
+
+// Include file koneksi database
+include 'db_connect.php';
+
+// Query untuk mengambil data user berdasarkan ID
+$query = "SELECT `Nama_User` FROM `user` WHERE `Id_User`='$userId'";
+$result = $conn->query($query);
 
 // Variabel untuk menampilkan nama pengguna
 $namaUser = '';
 
-// Contoh sederhana untuk menetapkan nama pengguna
-$namaUser = 'Pengguna';
+if ($result->num_rows > 0) {
+    // Loop through each row to fetch data
+    while ($row = $result->fetch_assoc()) {
+        $namaUser = $row['Nama_User'];
+    }
+} else {
+    echo "Data user tidak ditemukan.";
+}
+
+// Variabel untuk menampung pesan sukses atau error
+$message = '';
 
 // Memproses pengiriman data dari form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -17,17 +39,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kategori_masukan = isset($_POST['kategori_masukan']) ? $_POST['kategori_masukan'] : '';
     $pesan_detail = isset($_POST['pesan-detail']) ? $_POST['pesan-detail'] : '';
 
-    // Simpan data feedback ke dalam session (atau tempat penyimpanan sementara lainnya)
-    $_SESSION['feedback_data'] = [
-        'rating' => $rating,
-        'kategori_masukan' => $kategori_masukan,
-        'pesan_detail' => $pesan_detail
-    ];
+    // Konversi rating menjadi string
+    switch ($rating) {
+        case '1':
+            $ratingString = 'Sangat Buruk';
+            break;
+        case '2':
+            $ratingString = 'Buruk';
+            break;
+        case '3':
+            $ratingString = 'Netral';
+            break;
+        case '4':
+            $ratingString = 'Baik';
+            break;
+        case '5':
+            $ratingString = 'Sangat Baik';
+            break;
+        default:
+            $ratingString = '';
+            break;
+    }
 
-    // Tambahkan validasi lebih lanjut jika diperlukan
+    // Query untuk menyimpan feedback ke dalam database
+    $query = "INSERT INTO feedback (Id_User, nilai, kategori, komentar) VALUES ('$userId', '$ratingString', '$kategori_masukan', '$pesan_detail')";
 
-    // Set pesan sukses
-    $message = "Feedback berhasil disimpan";
+    if ($conn->query($query) === TRUE) {
+        // Mendapatkan ID feedback yang baru saja dimasukkan
+        $feedbackId = $conn->insert_id;
+
+        // Format id_feedback dalam format 'fdbck01', 'fdbck02', dst.
+        $id_feedback = 'fdbck' . str_pad($feedbackId, 2, '0', STR_PAD_LEFT);
+
+        // Set pesan sukses
+        $message = "Feedback berhasil disimpan. ID Feedback: $id_feedback";
+    } else {
+        // Jika terjadi error saat menyimpan
+        $message = "Error: " . $query . "<br>" . $conn->error;
+    }
 }
 ?>
 

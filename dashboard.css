@@ -301,17 +301,31 @@ hr {
   grid-template-rows: 75% 25%;
 }
 
+/*
+.lihatDetail {
+  border-radius: 10px;
+  background-color: #A93C00;
+  color: #FFFFFF;
+  padding: 0;
+  max-height: 27%;
+  margin: 10% 0 0 20%;
+  max-width: 60%;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+}
+*/
+
 .lihatDetailKelas {
   background-color: #A93C00;
   border-radius: 10px;
-  margin: 2vh 0 0 8vw;
-  max-height: 27%;
-  max-width: 60%;
+  margin: 10% 10% 10% 10%;
   color: #ffffff;
-  padding-top: 2vh;
+  padding-top: 0;
   text-align: center;
   font-size: 150%;
   text-decoration: none;
+  border: none;
 }
 /*====================================================*/
 #kelasBootcampContent h1, #proyekAkhirContent h1 {
@@ -536,4 +550,32 @@ hr {
 #pdfViewer {
   width: 100%;
   height: 600px;
+}
+
+footer {
+  background-color: #FF833D;
+  color: #811700;
+  display: block;
+  margin-top: 45px;
+  text-align: center;
+  padding-top: 3%;
+  font-family: sans-serif;
+  font-size: 110%;
+  padding-block: 3px;
+  font-weight: bold;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.colorBG {
+  margin-top: 35px;
+  background-color: #FF833D;
+  color: #811700;
+  font-size: 110%;
+  padding-block: 3px;
+  font-weight: bold;
 }

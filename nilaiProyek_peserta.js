@@ -36,4 +36,3 @@ function saveNilai(button) {
 function showSuccessMessage() {
   alert("Selamat, sertifikat berhasil dibuat!");
 }
-
